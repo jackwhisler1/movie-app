@@ -1,14 +1,18 @@
 class MoviesController < ApplicationController
   
-  def all_movies
+  def index
     #Lovely randomized hipster buzzword plots
     render json: Movie.all
   end
 
-  def movie
-    require "http"
+  def show
     id = params[:id]
     render json: Movie.find(id)
+  end
+
+  def create
+    id = params[:id]
+    render json: Movie
   end
 
 end
