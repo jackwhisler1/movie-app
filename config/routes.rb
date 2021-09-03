@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   
   post "/actors", controller: "actors", action: "create"
 
-  get "/actors/#id", controller: "actors", action: "show"
+  get "/actors/:id", controller: "actors", action: "show"
 
   patch "/actors/:id" => "actors#update"
 
