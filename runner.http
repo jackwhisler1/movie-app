@@ -1,6 +1,9 @@
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2MzE2NjY0Njd9.a8IX4ikAxqT_E7hbky8vETpsIi_pH5AWGuyFIoF2-4Q
+
+### Show actor
 GET http://127.0.0.1:3000/actors/9
 
-###
+### Create actor
 POST http://127.0.0.1:3000/actors
 Content-Type: application/json
 
@@ -9,13 +12,40 @@ Content-Type: application/json
 }
 
 
-###
+### Movies index
 GET http://127.0.0.1:3000/movies
 
-###
+### Update movie
 PATCH http://127.0.0.1:3000/movies/5
+Content-Type: application/json
+Authorization: Bearer {{jwt}}
+
+{
+  "year": 1971,
+  "english": true
+}
+
+
+### Create User
+### Users create (signup)
+POST http://localhost:3000/users
 Content-Type: application/json
 
 {
-  "year": 1970
+  "name": "God Mod",
+  "email": "mod@test.com",
+  "password": "password",
+  "password_confirmation": "password",
+  "admin": true
 }
+
+### Sessions create (login)
+POST http://localhost:3000/sessions
+Content-Type: application/json
+
+{
+  "email": "bob@test.com",
+  "password": "password"
+}
+
+###
