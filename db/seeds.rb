@@ -1,5 +1,17 @@
-
-require 'ffaker'
+# Genre.create([
+#   { name: "Action" },
+#   { name: "Comedy" },
+#   { name: "Romance" },
+#   { name: "Drama" },
+#   { name: "Documentary" },
+#   { name: "Horror" }
+# ])
+movies = Movie.all
+movies.each do |film|
+  MovieGenre.create([
+    { movie_id: film.id , genre_id: rand(1..6) }
+  ])
+end
 
 # 100.times do
 # #   Movie.create(
@@ -18,13 +30,13 @@ require 'ffaker'
 #     gender: FFaker::Gender.random
 #   )
 # end
-actors = Actor.all
-num = 1
-100.times do
+# actors = Actor.all
+# num = 1
+# 100.times do
 
-  person = Actor.find(num)
-  person.movie_id = rand(1..100)
-  person.save
-  num += 1
-end
+#   person = Actor.find(num)
+#   person.movie_id = rand(1..100)
+#   person.save
+#   num += 1
+# end
 
