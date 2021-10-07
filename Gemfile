@@ -45,3 +45,5 @@ gem "http"
 gem 'active_model_serializers'
 
 gem 'jwt'
+
+gem 'rack-cors'
